@@ -4,6 +4,10 @@
 #include <time.h>
 #define SIZE 3
 
+void cabeca();
+void painel();
+void menu();
+
 typedef struct NO{
 
 	char tabuleiro[SIZE][SIZE];
@@ -283,28 +287,9 @@ bool jogar_contra_computador(no* estado_atual, char jogador_atual){
  return(jogar_contra_computador(estado_atual, jogador_atual));
 }
 
-void menu(){
-
-	printf("/\\ Bem-vindo ao Jogo da Velha! /\\ \n\n");
-
-	printf("Digite sua opcao:\n");
-
-	printf("[1] -> Jogar Conta um Amigo \n");
-	printf("[2] -> Jogar Contra o Computador \n");
-	printf("[3] -> Sair do Jogo \n");
-
-}
-
-void painel(){
-
-	system("color 02");
-	printf("\n   /////////////////////////////// \n");
-	printf("\n  ///      JOGO-DA-VELHA      /// \n");
-	printf("\n /////////////////////////////// \n\n");	
-
-}
-
 int main(){
+
+    cabeca();
 
 	int modo_de_jogo;
 
@@ -347,7 +332,7 @@ int main(){
 		}
 
 		else if(modo_de_jogo == 3){
-            
+
 			printf("Jogo Terminado.\n");
 			no* atual = jogo_da_velha->raiz;
 
@@ -373,4 +358,39 @@ int main(){
 	}
 
  return(0);
+}
+
+void cabeca(){
+	system("color 02");
+	printf("        Universidade Federal Rural do Semi-arido (UFERSA)         \n");
+	printf("            Bacharelado em Tecnologia da Informacao               \n");
+	printf("   Disciplina: LABORAToRIO DE ALGORITMOS E ESTRUTURAS DE DADOS II \n");
+	printf("              Professor: KENNEDY REURISON LOPES                   \n\n");
+	printf("          _+_+_+_  PROJETO JOGO DA VELHA  _+_+_+_                 \n\n");
+	printf("           Discente: ROBERTO FERNANDES ROCHA                      \n");
+	printf("           Discente: HILDI DANTE OLIVEIRA DE QUEIROZ              \n");
+	printf("           Discente: RENATO ALVES PESSOA DE MEDEIROS              \n");
+	system("pause");
+	system("cls");
+}
+
+void painel(){
+
+	system("color 02");
+	printf("\n   /////////////////////////////// \n");
+	printf("\n  ///      JOGO-DA-VELHA      /// \n");
+	printf("\n /////////////////////////////// \n\n");	
+
+}
+
+void menu(){
+
+	printf("/\\ Bem-vindo ao Jogo da Velha! /\\ \n\n");
+
+	printf("Digite sua opcao:\n");
+
+	printf("[1] -> Jogar Conta um Amigo \n");
+	printf("[2] -> Jogar Contra o Computador \n");
+	printf("[3] -> Sair do Jogo \n");
+
 }
